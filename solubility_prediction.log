@@ -1,0 +1,8 @@
+2024-08-16 08:41:44,745 - INFO - Validated file: data/example_input.fasta
+2024-08-16 08:41:44,745 - ERROR - An error occurred: File not found: /Users/dev/Desktop/ReactNative/helmholtz1/backend/data/seq_reference_data.txt
+2024-08-16 08:46:07,456 - INFO - Validated file: data/example_input.fasta
+2024-08-16 08:46:07,456 - ERROR - An error occurred: File not found: /Users/dev/Desktop/ReactNative/helmholtz1/backend/data/seq_reference_data.txt
+2024-08-16 08:47:30,951 - INFO - Validated file: data/example_input.fasta
+2024-08-16 08:47:30,951 - INFO - Validated file: /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 08:47:30,951 - INFO - Processing FASTA input
+2024-08-16 08:47:30,962 - ERROR - An error occurred: string indices must be integers

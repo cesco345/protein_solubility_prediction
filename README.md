@@ -6,7 +6,7 @@ This project predicts protein solubility based on sequence composition and profi
 
 1. Clone this repository:
 
-git clone https://github.com/yourusername/protein_solubility_prediction.git
+git clone https://github.com/cesco345/protein_solubility_prediction.git
 cd protein_solubility_prediction
 
 2. Install the required packages:
