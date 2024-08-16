@@ -1,8 +1,8 @@
 import argparse
-import logging
-import pandas as pd
 import sys
-
+import traceback
+import pandas as pd
+import logging
 from config import Config
 from prediction import predict_solubility
 from utils import setup_logging, validate_files, parse_fasta, generate_profiles
@@ -25,7 +25,14 @@ def main():
         if args.fasta:
             logging.info("Processing FASTA input")
             compositions = parse_fasta(args.input_file)
+            logging.info(f"Compositions shape: {compositions.shape}")
+            logging.info(f"Compositions columns: {compositions.columns}")
+            logging.info(f"Compositions head:\n{compositions.head()}")
+            
             profiles = generate_profiles(compositions)
+            logging.info(f"Profiles shape: {profiles.shape}")
+            logging.info(f"Profiles columns: {profiles.columns}")
+            logging.info(f"Profiles head:\n{profiles.head()}")
         else:
             logging.info("Processing CSV input")
             compositions = pd.read_csv(args.input_file)
@@ -35,6 +42,8 @@ def main():
         logging.info(f"Predictions written to {args.output_file}")
     except Exception as e:
         logging.error(f"An error occurred: {str(e)}")
+        logging.error("Traceback:")
+        logging.error(traceback.format_exc())
         sys.exit(1)
 
 if __name__ == "__main__":

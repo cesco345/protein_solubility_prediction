@@ -45,6 +45,9 @@ def read_reference_data(file_path: str) -> Dict:
     return ref_data
 
 def calculate_prediction(row: pd.Series, headers: List[str], weights: np.ndarray, low_values: np.ndarray, top_values: np.ndarray) -> float:
+    if not headers:
+        return 0.5  # Return a neutral prediction if no features are available
+    
     feature_values = row[headers].astype(float).values
     scaled_values = np.clip((feature_values - low_values) / (top_values - low_values), 0, 1)
     prediction = np.sum(weights * scaled_values) / np.sum(np.abs(weights))
@@ -63,21 +66,47 @@ def predict_solubility(compositions: pd.DataFrame, profiles: pd.DataFrame, outpu
 
     data = pd.merge(compositions, profiles_pivot, on=config.ID_COLUMN, how='inner')
 
+    logging.info(f"Available features in data: {data.columns.tolist()}")
+
     features_to_use = [i for i, use in enumerate(ref_data[config.ZDF_KEY]['use_for_prob']) if use == 'y'][:num_features]
     weights = np.array([ref_data[config.ZDF_KEY]['zscore_diff'][i] for i in features_to_use])
     headers = [ref_data[config.ZDF_KEY]['headers'][i] for i in features_to_use]
 
-    low_values = ref_data[config.LOW_SOL_KEY]['data'].iloc[2, 4:].astype(float).values[features_to_use]
-    top_values = ref_data[config.TOP_SOL_KEY]['data'].iloc[2, 4:].astype(float).values[features_to_use]
+    # Filter headers to include those present in the data, accounting for '_x' and '_y' suffixes
+    available_headers = []
+    for h in headers:
+        if h in data.columns:
+            available_headers.append(h)
+        elif f"{h}_x" in data.columns:
+            available_headers.append(f"{h}_x")
+        elif f"{h}_y" in data.columns:
+            available_headers.append(f"{h}_y")
 
-    logging.info(f"Features used for prediction: {headers}")
-    logging.info(f"Feature weights: {weights}")
+    available_weights = np.array([w for h, w in zip(headers, weights) if h in available_headers or f"{h}_x" in available_headers or f"{h}_y" in available_headers])
 
-    data['prediction'] = data.apply(lambda row: calculate_prediction(row, headers, weights, low_values, top_values), axis=1)
+    logging.info(f"Features used for prediction: {available_headers}")
+    logging.info(f"Feature weights: {available_weights}")
+
+    if not available_headers:
+        logging.warning("No features available for prediction. Using neutral predictions.")
+        data['prediction'] = 0.5
+    else:
+        low_values = ref_data[config.LOW_SOL_KEY]['data'].iloc[2, 4:].astype(float).values[features_to_use]
+        top_values = ref_data[config.TOP_SOL_KEY]['data'].iloc[2, 4:].astype(float).values[features_to_use]
+
+        # Filter low_values and top_values to match available headers
+        low_values = np.array([lv for h, lv in zip(headers, low_values) if h in available_headers or f"{h}_x" in available_headers or f"{h}_y" in available_headers])
+        top_values = np.array([tv for h, tv in zip(headers, top_values) if h in available_headers or f"{h}_x" in available_headers or f"{h}_y" in available_headers])
+
+        data['prediction'] = data.apply(lambda row: calculate_prediction(row, available_headers, available_weights, low_values, top_values), axis=1)
 
     low_sol = ref_data[config.LOW_SOL_KEY][config.AVG_KEY]
     top_sol = ref_data[config.TOP_SOL_KEY][config.AVG_KEY]
     pop_sol = ref_data[config.POP_SOL_KEY][config.AVG_KEY]
+
+    logging.info(f"Low solubility: {low_sol}")
+    logging.info(f"Top solubility: {top_sol}")
+    logging.info(f"Population solubility: {pop_sol}")
 
     with open(output_file, 'w') as out_handle:
         out_handle.write(f"{config.OUTPUT_HEADER}\n")
@@ -85,7 +114,8 @@ def predict_solubility(compositions: pd.DataFrame, profiles: pd.DataFrame, outpu
             adjusted_prediction = (row['prediction'] + 1) / 2
             percent_sol = low_sol + (top_sol - low_sol) * adjusted_prediction
             scaled_sol = (percent_sol - low_sol) / (top_sol - low_sol)
-            out_handle.write(f"{config.OUTPUT_FORMAT.format(row[config.ID_COLUMN], percent_sol, scaled_sol, pop_sol, row['pI'])}\n")
+            out_handle.write(f"{config.OUTPUT_FORMAT.format(row[config.ID_COLUMN], percent_sol, scaled_sol, pop_sol, row['pI_x'])}\n")
+            logging.info(f"Prediction for {row[config.ID_COLUMN]}: raw={row['prediction']:.3f}, adjusted={adjusted_prediction:.3f}, percent_sol={percent_sol:.3f}, scaled_sol={scaled_sol:.3f}")
 
     logging.info(f"Prediction Statistics:")
     logging.info(f"Number of predictions: {len(data)}")

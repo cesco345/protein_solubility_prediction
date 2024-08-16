@@ -6,3 +6,375 @@
 2024-08-16 08:47:30,951 - INFO - Validated file: /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
 2024-08-16 08:47:30,951 - INFO - Processing FASTA input
 2024-08-16 08:47:30,962 - ERROR - An error occurred: string indices must be integers
+2024-08-16 13:52:42,312 - INFO - Validated file: data/example_input.fasta
+2024-08-16 13:52:42,313 - INFO - Validated file: /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 13:52:42,313 - INFO - Processing FASTA input
+2024-08-16 13:52:42,324 - ERROR - An error occurred: string indices must be integers
+2024-08-16 13:54:42,650 - INFO - Validated file: data/example_input.fasta
+2024-08-16 13:54:42,650 - INFO - Validated file: /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 13:54:42,650 - INFO - Processing FASTA input
+2024-08-16 13:54:42,658 - ERROR - An error occurred: string indices must be integers
+2024-08-16 13:56:24,008 - INFO - Validated file: data/example_input.fasta
+2024-08-16 13:56:24,008 - INFO - Validated file: /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 13:56:24,008 - INFO - Processing FASTA input
+2024-08-16 13:56:24,018 - ERROR - An error occurred: string indices must be integers
+2024-08-16 13:57:39,082 - INFO - Validated file: data/example_input.fasta
+2024-08-16 13:57:39,082 - INFO - Validated file: /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 13:57:39,082 - INFO - Processing FASTA input
+2024-08-16 13:57:39,093 - ERROR - An error occurred: string indices must be integers
+2024-08-16 14:03:46,414 - INFO - Validated file: data/example_input.fasta
+2024-08-16 14:03:46,414 - INFO - Validated file: /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:03:46,414 - INFO - Processing FASTA input
+2024-08-16 14:03:46,424 - ERROR - Error in parse_fasta: string indices must be integers
+2024-08-16 14:03:46,424 - ERROR - An error occurred: string indices must be integers
+2024-08-16 14:03:46,424 - ERROR - Traceback:
+2024-08-16 14:03:46,425 - ERROR - Traceback (most recent call last):
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/main.py", line 28, in main
+    compositions = parse_fasta(args.input_file)
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/utils.py", line 40, in parse_fasta
+    'disorder': sum(analysis.protein_scale(window=7, param_dict='ED'))/len(seq),
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/Bio/SeqUtils/ProtParam.py", line 280, in protein_scale
+    front = param_dict[subsequence[j]]
+TypeError: string indices must be integers
+
+2024-08-16 14:04:59,209 - INFO - Validated file: data/example_input.fasta
+2024-08-16 14:04:59,210 - INFO - Validated file: /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:04:59,210 - INFO - Processing FASTA input
+2024-08-16 14:04:59,220 - ERROR - Error in parse_fasta: string indices must be integers
+2024-08-16 14:04:59,220 - ERROR - An error occurred: string indices must be integers
+2024-08-16 14:04:59,220 - ERROR - Traceback:
+2024-08-16 14:04:59,221 - ERROR - Traceback (most recent call last):
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/main.py", line 27, in main
+    compositions = parse_fasta(args.input_file)
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/utils.py", line 40, in parse_fasta
+    'disorder': sum(analysis.protein_scale(window=7, param_dict='ED'))/len(seq),
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/Bio/SeqUtils/ProtParam.py", line 280, in protein_scale
+    front = param_dict[subsequence[j]]
+TypeError: string indices must be integers
+
+2024-08-16 14:07:10,069 - INFO - Validated file: data/example_input.fasta
+2024-08-16 14:07:10,069 - INFO - Validated file: /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:07:10,069 - INFO - Processing FASTA input
+2024-08-16 14:07:10,079 - INFO - Parsed 2 sequences from FASTA file
+2024-08-16 14:07:10,082 - INFO - Compositions shape: (2, 10)
+2024-08-16 14:07:10,082 - INFO - Compositions columns: Index(['ID', 'K-R', 'D-E', 'naa', 'KyteDoo', 'abs-charge', 'pI', 'FoldIndex',
+       'disorder', 'entropy'],
+      dtype='object')
+2024-08-16 14:07:10,088 - INFO - Compositions head:
+                     ID  K-R  D-E  naa   KyteDoo  abs-charge        pI  FoldIndex  disorder  entropy
+0                P00547   -7   -8  310  0.024194    7.010272  5.452815  -1.106235  0.035493    33920
+1  sp|P61626|LYSC_HUMAN   -8    5  148 -0.194595    8.513590  9.380359  -1.750470  0.022751    36440
+2024-08-16 14:07:10,088 - INFO - Profiles shape: (18, 3)
+2024-08-16 14:07:10,088 - INFO - Profiles columns: Index(['ID', 'Property', 'Value'], dtype='object')
+2024-08-16 14:07:10,089 - INFO - Profiles head:
+       ID    Property       Value
+0  P00547         K-R   -7.000000
+1  P00547         D-E   -8.000000
+2  P00547         naa  310.000000
+3  P00547     KyteDoo    0.024194
+4  P00547  abs-charge    7.010272
+2024-08-16 14:07:10,089 - INFO - Starting solubility prediction with 10 features
+2024-08-16 14:07:10,089 - INFO - Reading reference data from /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:07:10,090 - INFO - Reference data loaded successfully
+2024-08-16 14:07:10,090 - INFO - Composition shape: (2, 10)
+2024-08-16 14:07:10,090 - INFO - Profiles shape: (18, 3)
+2024-08-16 14:07:10,095 - ERROR - An error occurred: 'ZDF'
+2024-08-16 14:07:10,095 - ERROR - Traceback:
+2024-08-16 14:07:10,095 - ERROR - Traceback (most recent call last):
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/main.py", line 41, in main
+    predict_solubility(compositions, profiles, args.output_file, config, args.num_features)
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/prediction.py", line 66, in predict_solubility
+    features_to_use = [i for i, use in enumerate(ref_data[config.ZDF_KEY]['use_for_prob']) if use == 'y'][:num_features]
+KeyError: 'ZDF'
+
+2024-08-16 14:11:41,230 - INFO - Validated file: data/example_input.fasta
+2024-08-16 14:11:41,230 - INFO - Validated file: /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:11:41,230 - INFO - Processing FASTA input
+2024-08-16 14:11:41,241 - INFO - Parsed 2 sequences from FASTA file
+2024-08-16 14:11:41,242 - INFO - Compositions shape: (2, 10)
+2024-08-16 14:11:41,242 - INFO - Compositions columns: Index(['ID', 'K-R', 'D-E', 'naa', 'KyteDoo', 'abs-charge', 'pI', 'FoldIndex',
+       'disorder', 'entropy'],
+      dtype='object')
+2024-08-16 14:11:41,245 - INFO - Compositions head:
+                     ID  K-R  D-E  naa   KyteDoo  abs-charge        pI  FoldIndex  disorder  entropy
+0                P00547   -7   -8  310  0.024194    7.010272  5.452815  -1.106235  0.035493    33920
+1  sp|P61626|LYSC_HUMAN   -8    5  148 -0.194595    8.513590  9.380359  -1.750470  0.022751    36440
+2024-08-16 14:11:41,245 - INFO - Profiles shape: (18, 3)
+2024-08-16 14:11:41,245 - INFO - Profiles columns: Index(['ID', 'Property', 'Value'], dtype='object')
+2024-08-16 14:11:41,247 - INFO - Profiles head:
+       ID    Property       Value
+0  P00547         K-R   -7.000000
+1  P00547         D-E   -8.000000
+2  P00547         naa  310.000000
+3  P00547     KyteDoo    0.024194
+4  P00547  abs-charge    7.010272
+2024-08-16 14:11:41,247 - INFO - Starting solubility prediction with 10 features
+2024-08-16 14:11:41,247 - INFO - Reading reference data from /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:11:41,248 - INFO - Reference data loaded successfully
+2024-08-16 14:11:41,248 - INFO - Composition shape: (2, 10)
+2024-08-16 14:11:41,248 - INFO - Profiles shape: (18, 3)
+2024-08-16 14:11:41,251 - INFO - Features used for prediction: ['K-R', 'naa', 'H', 'L', 'V', 'D+E', 'F+W+Y', 'abs-charge', 'FoldIndex', 'entropy']
+2024-08-16 14:11:41,251 - INFO - Feature weights: [ 1.096 -1.523 -0.484 -0.557  0.522  0.876 -0.931  1.105 -0.711 -1.382]
+2024-08-16 14:11:41,252 - ERROR - An error occurred: "None of [Index(['K-R', 'naa', 'H', 'L', 'V', 'D+E', 'F+W+Y', 'abs-charge', 'FoldIndex',\n       'entropy'],\n      dtype='object')] are in the [index]"
+2024-08-16 14:11:41,252 - ERROR - Traceback:
+2024-08-16 14:11:41,257 - ERROR - Traceback (most recent call last):
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/main.py", line 41, in main
+    predict_solubility(compositions, profiles, args.output_file, config, args.num_features)
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/prediction.py", line 76, in predict_solubility
+    data['prediction'] = data.apply(lambda row: calculate_prediction(row, headers, weights, low_values, top_values), axis=1)
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/frame.py", line 10374, in apply
+    return op.apply().__finalize__(self, method="apply")
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/apply.py", line 916, in apply
+    return self.apply_standard()
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/apply.py", line 1063, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/apply.py", line 1081, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/prediction.py", line 76, in <lambda>
+    data['prediction'] = data.apply(lambda row: calculate_prediction(row, headers, weights, low_values, top_values), axis=1)
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/prediction.py", line 48, in calculate_prediction
+    feature_values = row[headers].astype(float).values
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/series.py", line 1153, in __getitem__
+    return self._get_with(key)
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/series.py", line 1194, in _get_with
+    return self.loc[key]
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/indexing.py", line 1420, in _getitem_axis
+    return self._getitem_iterable(key, axis=axis)
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/indexing.py", line 1360, in _getitem_iterable
+    keyarr, indexer = self._get_listlike_indexer(key, axis)
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/indexing.py", line 1558, in _get_listlike_indexer
+    keyarr, indexer = ax._get_indexer_strict(key, axis_name)
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 6249, in _raise_if_missing
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['K-R', 'naa', 'H', 'L', 'V', 'D+E', 'F+W+Y', 'abs-charge', 'FoldIndex',\n       'entropy'],\n      dtype='object')] are in the [index]"
+
+2024-08-16 14:17:49,292 - INFO - Validated file: data/example_input.fasta
+2024-08-16 14:17:49,293 - INFO - Validated file: /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:17:49,293 - INFO - Processing FASTA input
+2024-08-16 14:17:49,303 - INFO - Parsed 2 sequences from FASTA file
+2024-08-16 14:17:49,304 - INFO - Compositions shape: (2, 10)
+2024-08-16 14:17:49,304 - INFO - Compositions columns: Index(['ID', 'K-R', 'D-E', 'naa', 'KyteDoo', 'abs-charge', 'pI', 'FoldIndex',
+       'disorder', 'entropy'],
+      dtype='object')
+2024-08-16 14:17:49,307 - INFO - Compositions head:
+                     ID  K-R  D-E  naa   KyteDoo  abs-charge        pI  FoldIndex  disorder  entropy
+0                P00547   -7   -8  310  0.024194    7.010272  5.452815  -1.106235  0.035493    33920
+1  sp|P61626|LYSC_HUMAN   -8    5  148 -0.194595    8.513590  9.380359  -1.750470  0.022751    36440
+2024-08-16 14:17:49,307 - INFO - Profiles shape: (18, 3)
+2024-08-16 14:17:49,307 - INFO - Profiles columns: Index(['ID', 'Property', 'Value'], dtype='object')
+2024-08-16 14:17:49,309 - INFO - Profiles head:
+       ID    Property       Value
+0  P00547         K-R   -7.000000
+1  P00547         D-E   -8.000000
+2  P00547         naa  310.000000
+3  P00547     KyteDoo    0.024194
+4  P00547  abs-charge    7.010272
+2024-08-16 14:17:49,309 - INFO - Starting solubility prediction with 10 features
+2024-08-16 14:17:49,309 - INFO - Reading reference data from /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:17:49,310 - INFO - Reference data loaded successfully
+2024-08-16 14:17:49,310 - INFO - Composition shape: (2, 10)
+2024-08-16 14:17:49,310 - INFO - Profiles shape: (18, 3)
+2024-08-16 14:17:49,312 - INFO - Available features in data: ['ID', 'K-R_x', 'D-E_x', 'naa_x', 'KyteDoo_x', 'abs-charge_x', 'pI_x', 'FoldIndex_x', 'disorder_x', 'entropy_x', 'D-E_y', 'FoldIndex_y', 'K-R_y', 'KyteDoo_y', 'abs-charge_y', 'disorder_y', 'entropy_y', 'naa_y', 'pI_y']
+2024-08-16 14:17:49,313 - INFO - Features used for prediction: []
+2024-08-16 14:17:49,313 - INFO - Feature weights: []
+2024-08-16 14:17:49,313 - ERROR - An error occurred: unsupported operand type(s) for -: 'list' and 'list'
+2024-08-16 14:17:49,313 - ERROR - Traceback:
+2024-08-16 14:17:49,315 - ERROR - Traceback (most recent call last):
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/main.py", line 41, in main
+    predict_solubility(compositions, profiles, args.output_file, config, args.num_features)
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/prediction.py", line 86, in predict_solubility
+    data['prediction'] = data.apply(lambda row: calculate_prediction(row, available_headers, available_weights, low_values, top_values), axis=1)
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/frame.py", line 10374, in apply
+    return op.apply().__finalize__(self, method="apply")
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/apply.py", line 916, in apply
+    return self.apply_standard()
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/apply.py", line 1063, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/apply.py", line 1081, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/prediction.py", line 86, in <lambda>
+    data['prediction'] = data.apply(lambda row: calculate_prediction(row, available_headers, available_weights, low_values, top_values), axis=1)
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/prediction.py", line 49, in calculate_prediction
+    scaled_values = np.clip((feature_values - low_values) / (top_values - low_values), 0, 1)
+TypeError: unsupported operand type(s) for -: 'list' and 'list'
+
+2024-08-16 14:19:42,445 - INFO - Validated file: data/example_input.fasta
+2024-08-16 14:19:42,445 - INFO - Validated file: /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:19:42,445 - INFO - Processing FASTA input
+2024-08-16 14:19:42,455 - INFO - Parsed 2 sequences from FASTA file
+2024-08-16 14:19:42,456 - INFO - Compositions shape: (2, 10)
+2024-08-16 14:19:42,456 - INFO - Compositions columns: Index(['ID', 'K-R', 'D-E', 'naa', 'KyteDoo', 'abs-charge', 'pI', 'FoldIndex',
+       'disorder', 'entropy'],
+      dtype='object')
+2024-08-16 14:19:42,459 - INFO - Compositions head:
+                     ID  K-R  D-E  naa   KyteDoo  abs-charge        pI  FoldIndex  disorder  entropy
+0                P00547   -7   -8  310  0.024194    7.010272  5.452815  -1.106235  0.035493    33920
+1  sp|P61626|LYSC_HUMAN   -8    5  148 -0.194595    8.513590  9.380359  -1.750470  0.022751    36440
+2024-08-16 14:19:42,460 - INFO - Profiles shape: (18, 3)
+2024-08-16 14:19:42,460 - INFO - Profiles columns: Index(['ID', 'Property', 'Value'], dtype='object')
+2024-08-16 14:19:42,461 - INFO - Profiles head:
+       ID    Property       Value
+0  P00547         K-R   -7.000000
+1  P00547         D-E   -8.000000
+2  P00547         naa  310.000000
+3  P00547     KyteDoo    0.024194
+4  P00547  abs-charge    7.010272
+2024-08-16 14:19:42,461 - INFO - Starting solubility prediction with 10 features
+2024-08-16 14:19:42,461 - INFO - Reading reference data from /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:19:42,462 - INFO - Reference data loaded successfully
+2024-08-16 14:19:42,462 - INFO - Composition shape: (2, 10)
+2024-08-16 14:19:42,462 - INFO - Profiles shape: (18, 3)
+2024-08-16 14:19:42,465 - INFO - Available features in data: ['ID', 'K-R_x', 'D-E_x', 'naa_x', 'KyteDoo_x', 'abs-charge_x', 'pI_x', 'FoldIndex_x', 'disorder_x', 'entropy_x', 'D-E_y', 'FoldIndex_y', 'K-R_y', 'KyteDoo_y', 'abs-charge_y', 'disorder_y', 'entropy_y', 'naa_y', 'pI_y']
+2024-08-16 14:19:42,465 - INFO - Features used for prediction: []
+2024-08-16 14:19:42,465 - INFO - Feature weights: []
+2024-08-16 14:19:42,465 - WARNING - No features available for prediction. Using neutral predictions.
+2024-08-16 14:19:42,465 - ERROR - An error occurred: 'pI'
+2024-08-16 14:19:42,465 - ERROR - Traceback:
+2024-08-16 14:19:42,468 - ERROR - Traceback (most recent call last):
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'pI'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/main.py", line 41, in main
+    predict_solubility(compositions, profiles, args.output_file, config, args.num_features)
+  File "/Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/prediction.py", line 105, in predict_solubility
+    out_handle.write(f"{config.OUTPUT_FORMAT.format(row[config.ID_COLUMN], percent_sol, scaled_sol, pop_sol, row['pI'])}\n")
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/series.py", line 1121, in __getitem__
+    return self._get_value(key)
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/series.py", line 1237, in _get_value
+    loc = self.index.get_loc(label)
+  File "/opt/anaconda3/envs/pytorch/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'pI'
+
+2024-08-16 14:21:30,029 - INFO - Validated file: data/example_input.fasta
+2024-08-16 14:21:30,029 - INFO - Validated file: /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:21:30,029 - INFO - Processing FASTA input
+2024-08-16 14:21:30,040 - INFO - Parsed 2 sequences from FASTA file
+2024-08-16 14:21:30,040 - INFO - Compositions shape: (2, 10)
+2024-08-16 14:21:30,041 - INFO - Compositions columns: Index(['ID', 'K-R', 'D-E', 'naa', 'KyteDoo', 'abs-charge', 'pI', 'FoldIndex',
+       'disorder', 'entropy'],
+      dtype='object')
+2024-08-16 14:21:30,044 - INFO - Compositions head:
+                     ID  K-R  D-E  naa   KyteDoo  abs-charge        pI  FoldIndex  disorder  entropy
+0                P00547   -7   -8  310  0.024194    7.010272  5.452815  -1.106235  0.035493    33920
+1  sp|P61626|LYSC_HUMAN   -8    5  148 -0.194595    8.513590  9.380359  -1.750470  0.022751    36440
+2024-08-16 14:21:30,044 - INFO - Profiles shape: (18, 3)
+2024-08-16 14:21:30,044 - INFO - Profiles columns: Index(['ID', 'Property', 'Value'], dtype='object')
+2024-08-16 14:21:30,045 - INFO - Profiles head:
+       ID    Property       Value
+0  P00547         K-R   -7.000000
+1  P00547         D-E   -8.000000
+2  P00547         naa  310.000000
+3  P00547     KyteDoo    0.024194
+4  P00547  abs-charge    7.010272
+2024-08-16 14:21:30,045 - INFO - Starting solubility prediction with 10 features
+2024-08-16 14:21:30,045 - INFO - Reading reference data from /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:21:30,047 - INFO - Reference data loaded successfully
+2024-08-16 14:21:30,047 - INFO - Composition shape: (2, 10)
+2024-08-16 14:21:30,047 - INFO - Profiles shape: (18, 3)
+2024-08-16 14:21:30,049 - INFO - Available features in data: ['ID', 'K-R_x', 'D-E_x', 'naa_x', 'KyteDoo_x', 'abs-charge_x', 'pI_x', 'FoldIndex_x', 'disorder_x', 'entropy_x', 'D-E_y', 'FoldIndex_y', 'K-R_y', 'KyteDoo_y', 'abs-charge_y', 'disorder_y', 'entropy_y', 'naa_y', 'pI_y']
+2024-08-16 14:21:30,049 - INFO - Features used for prediction: []
+2024-08-16 14:21:30,049 - INFO - Feature weights: []
+2024-08-16 14:21:30,049 - WARNING - No features available for prediction. Using neutral predictions.
+2024-08-16 14:21:30,050 - INFO - Prediction Statistics:
+2024-08-16 14:21:30,050 - INFO - Number of predictions: 2
+2024-08-16 14:21:30,050 - INFO - Mean raw prediction: 0.500
+2024-08-16 14:21:30,050 - INFO - Min raw prediction: 0.500
+2024-08-16 14:21:30,050 - INFO - Max raw prediction: 0.500
+2024-08-16 14:21:30,050 - INFO - Mean adjusted prediction: 0.750
+2024-08-16 14:21:30,050 - INFO - Min adjusted prediction: 0.750
+2024-08-16 14:21:30,050 - INFO - Max adjusted prediction: 0.750
+2024-08-16 14:21:30,050 - INFO - Predictions written to predictions_fasta.txt
+2024-08-16 14:23:29,344 - INFO - Validated file: data/example_input.fasta
+2024-08-16 14:23:29,345 - INFO - Validated file: /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:23:29,345 - INFO - Processing FASTA input
+2024-08-16 14:23:29,355 - INFO - Parsed 2 sequences from FASTA file
+2024-08-16 14:23:29,356 - INFO - Compositions shape: (2, 10)
+2024-08-16 14:23:29,356 - INFO - Compositions columns: Index(['ID', 'K-R', 'D-E', 'naa', 'KyteDoo', 'abs-charge', 'pI', 'FoldIndex',
+       'disorder', 'entropy'],
+      dtype='object')
+2024-08-16 14:23:29,359 - INFO - Compositions head:
+                     ID  K-R  D-E  naa   KyteDoo  abs-charge        pI  FoldIndex  disorder  entropy
+0                P00547   -7   -8  310  0.024194    7.010272  5.452815  -1.106235  0.035493    33920
+1  sp|P61626|LYSC_HUMAN   -8    5  148 -0.194595    8.513590  9.380359  -1.750470  0.022751    36440
+2024-08-16 14:23:29,359 - INFO - Profiles shape: (18, 3)
+2024-08-16 14:23:29,359 - INFO - Profiles columns: Index(['ID', 'Property', 'Value'], dtype='object')
+2024-08-16 14:23:29,361 - INFO - Profiles head:
+       ID    Property       Value
+0  P00547         K-R   -7.000000
+1  P00547         D-E   -8.000000
+2  P00547         naa  310.000000
+3  P00547     KyteDoo    0.024194
+4  P00547  abs-charge    7.010272
+2024-08-16 14:23:29,361 - INFO - Starting solubility prediction with 10 features
+2024-08-16 14:23:29,361 - INFO - Reading reference data from /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:23:29,362 - INFO - Reference data loaded successfully
+2024-08-16 14:23:29,362 - INFO - Composition shape: (2, 10)
+2024-08-16 14:23:29,362 - INFO - Profiles shape: (18, 3)
+2024-08-16 14:23:29,365 - INFO - Available features in data: ['ID', 'K-R_x', 'D-E_x', 'naa_x', 'KyteDoo_x', 'abs-charge_x', 'pI_x', 'FoldIndex_x', 'disorder_x', 'entropy_x', 'D-E_y', 'FoldIndex_y', 'K-R_y', 'KyteDoo_y', 'abs-charge_y', 'disorder_y', 'entropy_y', 'naa_y', 'pI_y']
+2024-08-16 14:23:29,365 - INFO - Features used for prediction: ['K-R_x', 'naa_x', 'abs-charge_x', 'FoldIndex_x', 'entropy_x']
+2024-08-16 14:23:29,365 - INFO - Feature weights: [ 1.096 -1.523  1.105 -0.711 -1.382]
+2024-08-16 14:23:29,366 - INFO - Prediction Statistics:
+2024-08-16 14:23:29,366 - INFO - Number of predictions: 2
+2024-08-16 14:23:29,366 - INFO - Mean raw prediction: -0.130
+2024-08-16 14:23:29,366 - INFO - Min raw prediction: -0.194
+2024-08-16 14:23:29,366 - INFO - Max raw prediction: -0.066
+2024-08-16 14:23:29,366 - INFO - Mean adjusted prediction: 0.435
+2024-08-16 14:23:29,367 - INFO - Min adjusted prediction: 0.403
+2024-08-16 14:23:29,367 - INFO - Max adjusted prediction: 0.467
+2024-08-16 14:23:29,367 - INFO - Predictions written to predictions_fasta.txt
+2024-08-16 14:27:09,199 - INFO - Validated file: data/example_input.fasta
+2024-08-16 14:27:09,200 - INFO - Validated file: /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:27:09,200 - INFO - Processing FASTA input
+2024-08-16 14:27:09,210 - INFO - Parsed 2 sequences from FASTA file
+2024-08-16 14:27:09,211 - INFO - Compositions shape: (2, 10)
+2024-08-16 14:27:09,211 - INFO - Compositions columns: Index(['ID', 'K-R', 'D-E', 'naa', 'KyteDoo', 'abs-charge', 'pI', 'FoldIndex',
+       'disorder', 'entropy'],
+      dtype='object')
+2024-08-16 14:27:09,214 - INFO - Compositions head:
+                     ID  K-R  D-E  naa   KyteDoo  abs-charge        pI  FoldIndex  disorder  entropy
+0                P00547   -7   -8  310  0.024194    7.010272  5.452815  -1.106235  0.035493    33920
+1  sp|P61626|LYSC_HUMAN   -8    5  148 -0.194595    8.513590  9.380359  -1.750470  0.022751    36440
+2024-08-16 14:27:09,215 - INFO - Profiles shape: (18, 3)
+2024-08-16 14:27:09,215 - INFO - Profiles columns: Index(['ID', 'Property', 'Value'], dtype='object')
+2024-08-16 14:27:09,216 - INFO - Profiles head:
+       ID    Property       Value
+0  P00547         K-R   -7.000000
+1  P00547         D-E   -8.000000
+2  P00547         naa  310.000000
+3  P00547     KyteDoo    0.024194
+4  P00547  abs-charge    7.010272
+2024-08-16 14:27:09,216 - INFO - Starting solubility prediction with 10 features
+2024-08-16 14:27:09,216 - INFO - Reading reference data from /Users/dev/Desktop/ReactNative/helmholtz1/backend/protein_solubility_prediction/data/seq_reference_data.txt
+2024-08-16 14:27:09,217 - INFO - Reference data loaded successfully
+2024-08-16 14:27:09,217 - INFO - Composition shape: (2, 10)
+2024-08-16 14:27:09,217 - INFO - Profiles shape: (18, 3)
+2024-08-16 14:27:09,220 - INFO - Available features in data: ['ID', 'K-R_x', 'D-E_x', 'naa_x', 'KyteDoo_x', 'abs-charge_x', 'pI_x', 'FoldIndex_x', 'disorder_x', 'entropy_x', 'D-E_y', 'FoldIndex_y', 'K-R_y', 'KyteDoo_y', 'abs-charge_y', 'disorder_y', 'entropy_y', 'naa_y', 'pI_y']
+2024-08-16 14:27:09,220 - INFO - Features used for prediction: ['K-R_x', 'naa_x', 'abs-charge_x', 'FoldIndex_x', 'entropy_x']
+2024-08-16 14:27:09,220 - INFO - Feature weights: [ 1.096 -1.523  1.105 -0.711 -1.382]
+2024-08-16 14:27:09,221 - INFO - Low solubility: 5.208
+2024-08-16 14:27:09,221 - INFO - Top solubility: 113.241
+2024-08-16 14:27:09,221 - INFO - Population solubility: 53.347
+2024-08-16 14:27:09,221 - INFO - Prediction for P00547: raw=-0.066, adjusted=0.467, percent_sol=55.666, scaled_sol=0.467
+2024-08-16 14:27:09,221 - INFO - Prediction for sp|P61626|LYSC_HUMAN: raw=-0.194, adjusted=0.403, percent_sol=48.741, scaled_sol=0.403
+2024-08-16 14:27:09,221 - INFO - Prediction Statistics:
+2024-08-16 14:27:09,221 - INFO - Number of predictions: 2
+2024-08-16 14:27:09,221 - INFO - Mean raw prediction: -0.130
+2024-08-16 14:27:09,221 - INFO - Min raw prediction: -0.194
+2024-08-16 14:27:09,221 - INFO - Max raw prediction: -0.066
+2024-08-16 14:27:09,221 - INFO - Mean adjusted prediction: 0.435
+2024-08-16 14:27:09,221 - INFO - Min adjusted prediction: 0.403
+2024-08-16 14:27:09,221 - INFO - Max adjusted prediction: 0.467
+2024-08-16 14:27:09,222 - INFO - Predictions written to predictions_fasta.txt
