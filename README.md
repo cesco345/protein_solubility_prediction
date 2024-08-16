@@ -1,6 +1,6 @@
 # Protein Solubility Prediction
 
-This project predicts protein solubility based on sequence composition and profile data.
+This project predicts protein solubility based on sequence composition and profile data. A Python-based protein solubility prediction tool, building on the Protein-sol algorithm developed by the Warwicker group at the University of Manchester.
 
 ## Installation
 
